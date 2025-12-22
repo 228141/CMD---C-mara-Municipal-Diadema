@@ -1,0 +1,36 @@
+
+{
+  "name": "T5 - Aprovar Compras",
+  "steps": 1,
+  "elements": [
+    { "key": "section_header", "type": "section", "cols": 12, "elements": [
+      { "key": "h1_title", "title": "APROVAÇÃO FINAL DA COMPRA", "type": "h1", "cols": 12 }
+    ] },
+    { "key": "section_dados", "type": "section", "cols": 12, "elements": [
+      { "key": "h2_dados", "title": "Resumo (somente leitura)", "type": "h2", "cols": 12 },
+      { "key": "tipo", "title": "Tipo", "type": "input", "cols": 6, "readonly": true },
+      { "key": "categoria", "title": "Categoria", "type": "input", "cols": 6, "readonly": true },
+      { "key": "modalidade", "title": "Modalidade", "type": "input", "cols": 6, "readonly": true },
+      { "key": "valor_base", "title": "Valor Base", "type": "currency", "cols": 6, "readonly": true },
+      { "key": "resultado_classificacao", "title": "Resultado da classificação", "type": "textarea", "cols": 12, "readonly": true }
+    ] },
+    { "key": "section_decisao", "type": "section", "cols": 12, "elements": [
+      { "key": "h2_decisao", "title": "Decisão", "type": "h2", "cols": 12 },
+      { "key": "decisao_final", "title": "Decisão final", "type": "select", "cols": 6, "required": true,
+        "titleMap": [
+          { "value": "Aprovado", "name": "Aprovado" },
+          { "value": "Rejeitado", "name": "Rejeitado" },
+          { "value": "Ajustes na cotação", "name": "Ajustes na cotação" }
+        ]
+      },
+      { "key": "observacoes_decisao", "title": "Observações da decisão", "type": "textarea", "cols": 12, "required": true }
+    ] },
+    { "key": "section_actions", "type": "section", "cols": 12, "elements": [
+      { "key": "actions", "title": "Ação", "type": "actions", "cols": 12, "elements": [
+        { "key": "submit_aprovado", "title": "Aprovar", "type": "submit", "style": "btn-primary" },
+        { "key": "submit_rejeitado", "title": "Rejeitar", "type": "submit", "style": "btn-danger" },
+        { "key": "submit_ajustes", "title": "Solicitar ajustes de cotação", "type": "submit", "style": "btn-secondary" }
+      ] }
+    ] }
+  ]
+}

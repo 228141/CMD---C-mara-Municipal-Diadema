@@ -1,0 +1,27 @@
+
+{
+  "name": "T10 - Enviar Confirmação ao Solicitante",
+  "steps": 1,
+  "elements": [
+    { "key": "section_header", "type": "section", "cols": 12, "elements": [
+      { "key": "h1_title", "title": "CONFIRMAÇÃO AO SOLICITANTE", "type": "h1", "cols": 12 }
+    ] },
+    { "key": "section_req", "type": "section", "cols": 12, "elements": [
+      { "key": "nome_requerente", "title": "Nome do requerente", "type": "input", "cols": 6, "readonly": true },
+      { "key": "email_requerente", "title": "E-mail do requerente", "type": "input", "cols": 6, "readonly": true },
+      { "key": "descricao", "title": "Descrição da solicitação", "type": "textarea", "cols": 12, "readonly": true }
+    ] },
+    { "key": "section_confirmacao", "type": "section", "cols": 12, "elements": [
+      { "key": "data_prevista_entrega", "title": "Data prevista de entrega/execução", "type": "input-date", "cols": 6, "required": true },
+      { "key": "mensagem_confirmacao", "title": "Mensagem de confirmação", "type": "textarea", "cols": 12, "required": true }
+    ] },
+    { "key": "section_anexo", "type": "section", "cols": 12, "elements": [
+      { "key": "pedido_pdf", "title": "Anexar Pedido (PDF)", "type": "file", "cols": 12, "fileType": "application/pdf", "required": true }
+    ] },
+    { "key": "section_actions", "type": "section", "cols": 12, "elements": [
+      { "key": "actions", "title": "Ação", "type": "actions", "cols": 12, "elements": [
+        { "key": "submit_enviar", "title": "Enviar confirmação", "type": "submit", "style": "btn-primary" }
+      ] }
+    ] }
+  ]
+}

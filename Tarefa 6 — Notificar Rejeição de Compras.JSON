@@ -1,0 +1,25 @@
+
+{
+  "name": "T6 - Notificar Rejeição de Compras",
+  "steps": 1,
+  "elements": [
+    { "key": "section_header", "type": "section", "cols": 12, "elements": [
+      { "key": "h1_title", "title": "NOTIFICAÇÃO DE REJEIÇÃO", "type": "h1", "cols": 12 }
+    ] },
+    { "key": "section_requerente", "type": "section", "cols": 12, "elements": [
+      { "key": "h2_req", "title": "Dados do Requerente (somente leitura)", "type": "h2", "cols": 12 },
+      { "key": "nome_requerente", "title": "Nome", "type": "input", "cols": 6, "readonly": true },
+      { "key": "email_requerente", "title": "E-mail", "type": "input", "cols": 6, "readonly": true },
+      { "key": "descricao", "title": "Descrição da solicitação", "type": "textarea", "cols": 12, "readonly": true }
+    ] },
+    { "key": "section_msg", "type": "section", "cols": 12, "elements": [
+      { "key": "motivo_rejeicao", "title": "Motivo da rejeição", "type": "textarea", "cols": 12, "required": true },
+      { "key": "mensagem_ao_requerente", "title": "Mensagem ao requerente", "type": "textarea", "cols": 12, "required": true }
+    ] },
+    { "key": "section_actions", "type": "section", "cols": 12, "elements": [
+      { "key": "actions", "title": "Ação", "type": "actions", "cols": 12, "elements": [
+        { "key": "submit_notificar", "title": "Enviar notificação e Arquivar", "type": "submit", "style": "btn-primary" }
+      ] }
+    ] }
+  ]
+}

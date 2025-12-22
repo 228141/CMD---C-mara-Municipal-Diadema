@@ -1,0 +1,42 @@
+
+{
+  "name": "T4 - Consolidar Cotações",
+  "steps": 1,
+  "elements": [
+    { "key": "section_header", "type": "section", "cols": 12, "elements": [
+      { "key": "h1_title", "title": "CONSOLIDAÇÃO DE COTAÇÕES", "type": "h1", "cols": 12 }
+    ] },
+    { "key": "section_propostas", "type": "section", "cols": 12, "elements": [
+      { "key": "h2_propostas", "title": "Propostas recebidas", "type": "h2", "cols": 12 },
+      { "key": "propostas_recebidas", "title": "Propostas", "type": "repeatable", "cols": 12,
+        "schema": {
+          "fornecedor": { "type": "input", "title": "Fornecedor", "cols": 6, "readonly": false, "required": true },
+          "cnpj": { "type": "input", "title": "CNPJ", "cols": 3, "required": true },
+          "valor_total": { "type": "currency", "title": "Valor Total", "cols": 3, "required": true },
+          "prazo_entrega": { "type": "input", "title": "Prazo de entrega (dias)", "cols": 3, "required": true },
+          "conformidade_tecnica": { "type": "select", "title": "Conformidade técnica", "cols": 3, "required": true,
+            "titleMap": [
+              { "value": "Atende", "name": "Atende" }, { "value": "Não atende", "name": "Não atende" }
+            ] }
+        }
+      },
+      { "key": "metodo_comparacao", "title": "Método de comparação", "type": "select", "cols": 6, "required": true,
+        "titleMap": [
+          { "value": "Menor preço", "name": "Menor preço" }, { "value": "Técnica e preço", "name": "Técnica e preço" }
+        ]
+      },
+      { "key": "resultado_classificacao", "title": "Resultado da classificação", "type": "textarea", "cols": 12, "required": true },
+      { "key": "justificativa_escolha", "title": "Justificativa (se não for menor preço)", "type": "textarea", "cols": 12, "help": "Obrigatória quando o fornecedor escolhido não for o menor preço." }
+    ] },
+    { "key": "section_anexos", "type": "section", "cols": 12, "elements": [
+      { "key": "h2_anexos", "title": "Mapa comparativo", "type": "h2", "cols": 12 },
+      { "key": "mapa_comparativo", "title": "Mapa comparativo de preços", "type": "file", "cols": 12,
+        "fileType": "application/pdf,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" }
+    ] },
+    { "key": "section_actions", "type": "section", "cols": 12, "elements": [
+      { "key": "actions", "title": "Ação", "type": "actions", "cols": 12, "elements": [
+        { "key": "submit_concluir", "title": "Concluir consolidação", "type": "submit", "style": "btn-primary" }
+      ] }
+    ] }
+  ]
+}

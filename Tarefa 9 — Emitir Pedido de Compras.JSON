@@ -1,0 +1,38 @@
+
+{
+  "name": "T9 - Emitir Pedido de Compras",
+  "steps": 1,
+  "elements": [
+    { "key": "section_header", "type": "section", "cols": 12, "elements": [
+      { "key": "h1_title", "title": "EMISSÃO DE PEDIDO DE COMPRAS (PO)", "type": "h1", "cols": 12 }
+    ] },
+    { "key": "section_po", "type": "section", "cols": 12, "elements": [
+      { "key": "numero_pedido", "title": "Número do Pedido (PO)", "type": "input", "cols": 4, "required": true },
+      { "key": "fornecedor", "title": "Fornecedor", "type": "input", "cols": 4, "required": true },
+      { "key": "cnpj_fornecedor", "title": "CNPJ do fornecedor", "type": "input", "cols": 4, "required": true },
+      { "key": "itens_pedido", "title": "Itens do Pedido", "type": "repeatable", "cols": 12,
+        "schema": {
+          "descricao": { "type": "input", "title": "Descrição", "required": true, "cols": 6 },
+          "quantidade": { "type": "input", "title": "Qtd.", "required": true, "cols": 2 },
+          "valor_unitario": { "type": "currency", "title": "Valor unitário", "required": true, "cols": 4 }
+        }
+      },
+      { "key": "condicoes_pagamento", "title": "Condições de pagamento", "type": "select", "cols": 4, "required": true,
+        "titleMap": [
+          { "value": "30 dias", "name": "30 dias" },
+          { "value": "45 dias", "name": "45 dias" },
+          { "value": "60 dias", "name": "60 dias" }
+        ]
+      },
+      { "key": "local_entrega", "title": "Local de entrega", "type": "input", "cols": 8, "required": true }
+    ] },
+    { "key": "section_anexo_po", "type": "section", "cols": 12, "elements": [
+      { "key": "pedido_pdf", "title": "Anexar Pedido (PDF)", "type": "file", "cols": 12, "fileType": "application/pdf", "required": true }
+    ] },
+    { "key": "section_actions", "type": "section", "cols": 12, "elements": [
+      { "key": "actions", "title": "Ação", "type": "actions", "cols": 12, "elements": [
+        { "key": "submit_emitir", "title": "Confirmar emissão do pedido", "type": "submit", "style": "btn-primary" }
+      ] }
+    ] }
+  ]
+}

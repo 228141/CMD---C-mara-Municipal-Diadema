@@ -1,0 +1,52 @@
+
+{
+  "name": "T2 - Avaliar Solicitação de Compras",
+  "steps": 1,
+  "elements": [
+    { "key": "section_header", "type": "section", "cols": 12, "elements": [
+      { "key": "h1_title", "title": "AVALIAÇÃO DO GESTOR", "type": "h1", "cols": 12 }
+    ] },
+    { "key": "section_dados_solicitacao", "type": "section", "cols": 12, "elements": [
+      { "key": "h2_dados", "title": "Dados da Solicitação (somente leitura)", "type": "h2", "cols": 12 },
+      { "key": "tipo", "title": "Tipo", "type": "input", "cols": 6, "readonly": true },
+      { "key": "categoria", "title": "Categoria", "type": "input", "cols": 6, "readonly": true },
+      { "key": "modalidade", "title": "Modalidade", "type": "input", "cols": 6, "readonly": true },
+      { "key": "valor_base", "title": "Valor Base", "type": "currency", "cols": 6, "readonly": true },
+      { "key": "descricao", "title": "Justificativa / Descrição", "type": "textarea", "cols": 12, "rows": 4, "readonly": true }
+    ] },
+    { "key": "section_avaliacao", "type": "section", "cols": 12, "elements": [
+      { "key": "h2_avaliacao", "title": "Parâmetros de Avaliação", "type": "h2", "cols": 12 },
+      { "key": "centro_custo", "title": "Centro de Custo", "type": "select", "cols": 4, "required": true,
+        "titleMap": [
+          { "value": "CC01", "name": "CC01" }, { "value": "CC02", "name": "CC02" }, { "value": "CC03", "name": "CC03" }
+        ] },
+      { "key": "fonte_recurso", "title": "Fonte de Recurso", "type": "select", "cols": 4, "required": true,
+        "titleMap": [
+          { "value": "Despesa", "name": "Despesa" }, { "value": "Investimento", "name": "Investimento" }
+        ] },
+      { "key": "conformidade_orcamentaria", "title": "Conformidade orçamentária", "type": "select", "cols": 4, "required": true,
+        "titleMap": [
+          { "value": "Adequado", "name": "Adequado" }, { "value": "Insuficiente", "name": "Insuficiente" }
+        ] },
+      { "key": "alinhamento_planejamento", "title": "Alinhamento ao planejamento", "type": "select", "cols": 4, "required": true,
+        "titleMap": [
+          { "value": "Sim", "name": "Sim" }, { "value": "Não", "name": "Não" }
+        ] },
+      { "key": "prioridade", "title": "Prioridade", "type": "select", "cols": 4, "required": true,
+        "titleMap": [
+          { "value": "Alta", "name": "Alta" }, { "value": "Média", "name": "Média" }, { "value": "Baixa", "name": "Baixa" }
+        ] },
+      { "key": "decisao", "title": "Decisão", "type": "select", "cols": 4, "required": true,
+        "titleMap": [
+          { "value": "Aprovar", "name": "Aprovar" }, { "value": "Rejeitar", "name": "Rejeitar" }
+        ] },
+      { "key": "motivo_rejeicao", "title": "Motivo da rejeição", "type": "textarea", "cols": 12, "help": "Preencher se a decisão for Rejeitar." }
+    ] },
+    { "key": "section_actions", "type": "section", "cols": 12, "elements": [
+      { "key": "actions", "title": "Ação", "type": "actions", "cols": 12, "elements": [
+        { "key": "submit_aprovar", "title": "Aprovar", "type": "submit", "style": "btn-primary" },
+        { "key": "submit_rejeitar", "title": "Rejeitar", "type": "submit", "style": "btn-danger" }
+      ] }
+    ] }
+  ]
+}

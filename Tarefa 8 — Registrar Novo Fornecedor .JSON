@@ -1,0 +1,29 @@
+
+{
+  "name": "T8 - Registrar Novo Fornecedor",
+  "steps": 1,
+  "elements": [
+    { "key": "section_header", "type": "section", "cols": 12, "elements": [
+      { "key": "h1_title", "title": "CADASTRO DE FORNECEDOR", "type": "h1", "cols": 12 }
+    ] },
+    { "key": "section_cadastro", "type": "section", "cols": 12, "elements": [
+      { "key": "razao_social", "title": "Razão Social", "type": "input", "cols": 6, "required": true },
+      { "key": "nome_fantasia", "title": "Nome Fantasia", "type": "input", "cols": 6 },
+      { "key": "cnpj", "title": "CNPJ", "type": "input", "cols": 6, "required": true, "help": "Informe CNPJ válido." },
+      { "key": "inscricao_estadual", "title": "Inscrição Estadual", "type": "input", "cols": 6 },
+      { "key": "email", "title": "E-mail", "type": "input", "cols": 6, "required": true },
+      { "key": "telefone", "title": "Telefone", "type": "input", "cols": 6, "help": "Formato sugerido: (99) 9999-9999" },
+      { "key": "endereco", "title": "Endereço", "type": "textarea", "cols": 12, "required": true },
+      { "key": "responsavel_contato", "title": "Responsável pelo contato", "type": "input", "cols": 6, "required": true }
+    ] },
+    { "key": "section_anexos", "type": "section", "cols": 12, "elements": [
+      { "key": "h2_anexos", "title": "Documentos fiscais", "type": "h2", "cols": 12 },
+      { "key": "docs_fiscais", "title": "Inserir documentos (PDF)", "type": "file-multiple", "cols": 10, "fileType": "application/pdf", "required": true }
+    ] },
+    { "key": "section_actions", "type": "section", "cols": 12, "elements": [
+      { "key": "actions", "title": "Ação", "type": "actions", "cols": 12, "elements": [
+        { "key": "submit_cadastrar", "title": "Cadastrar fornecedor", "type": "submit", "style": "btn-primary" }
+      ] }
+    ] }
+  ]
+}

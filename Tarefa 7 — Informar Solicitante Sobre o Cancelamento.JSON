@@ -1,0 +1,23 @@
+
+{
+  "name": "T7 - Informar Cancelamento ao Solicitante",
+  "steps": 1,
+  "elements": [
+    { "key": "section_header", "type": "section", "cols": 12, "elements": [
+      { "key": "h1_title", "title": "INFORMAÇÃO DE CANCELAMENTO", "type": "h1", "cols": 12 }
+    ] },
+    { "key": "section_requerente", "type": "section", "cols": 12, "elements": [
+      { "key": "nome_requerente", "title": "Nome", "type": "input", "cols": 6, "readonly": true },
+      { "key": "email_requerente", "title": "E-mail", "type": "input", "cols": 6, "readonly": true }
+    ] },
+    { "key": "section_cancel", "type": "section", "cols": 12, "elements": [
+      { "key": "motivo_cancelamento", "title": "Motivo do cancelamento", "type": "textarea", "cols": 12, "required": true },
+      { "key": "efeitos_cancelamento", "title": "Efeitos/impactos", "type": "textarea", "cols": 12, "required": true }
+    ] },
+    { "key": "section_actions", "type": "section", "cols": 12, "elements": [
+      { "key": "actions", "title": "Ação", "type": "actions", "cols": 12, "elements": [
+        { "key": "submit_notificar", "title": "Enviar notificação e Arquivar", "type": "submit", "style": "btn-primary" }
+      ] }
+    ] }
+  ]
+}

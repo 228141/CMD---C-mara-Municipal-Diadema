@@ -1,0 +1,31 @@
+
+{
+  "name": "T11 - Receber Serviços",
+  "steps": 1,
+  "elements": [
+    { "key": "section_header", "type": "section", "cols": 12, "elements": [
+      { "key": "h1_title", "title": "RECEBIMENTO DE SERVIÇOS", "type": "h1", "cols": 12 }
+    ] },
+    { "key": "section_recebimento", "type": "section", "cols": 12, "elements": [
+      { "key": "data_execucao", "title": "Data de execução", "type": "input-date", "cols": 4, "required": true },
+      { "key": "descricao_servico_executado", "title": "Descrição do serviço executado", "type": "textarea", "cols": 12, "required": true },
+      { "key": "aceite_servico", "title": "Aceite do serviço", "type": "select", "cols": 4, "required": true,
+        "titleMap": [
+          { "value": "Aceito", "name": "Aceito" },
+          { "value": "Aceito com ressalvas", "name": "Aceito com ressalvas" },
+          { "value": "Não aceito", "name": "Não aceito" }
+        ]
+      },
+      { "key": "observacoes", "title": "Observações", "type": "textarea", "cols": 12 }
+    ] },
+    { "key": "section_anexos", "type": "section", "cols": 12, "elements": [
+      { "key": "relatorio_execucao", "title": "Relatório de execução (PDF)", "type": "file", "cols": 6, "fileType": "application/pdf" },
+      { "key": "nota_fiscal_servico", "title": "Nota fiscal de serviço (PDF)", "type": "file", "cols": 6, "fileType": "application/pdf" }
+    ] },
+    { "key": "section_actions", "type": "section", "cols": 12, "elements": [
+      { "key": "actions", "title": "Ação", "type": "actions", "cols": 12, "elements": [
+        { "key": "submit_arquivar", "title": "Concluir recebimento e Arquivar", "type": "submit", "style": "btn-primary" }
+      ] }
+    ] }
+  ]
+}

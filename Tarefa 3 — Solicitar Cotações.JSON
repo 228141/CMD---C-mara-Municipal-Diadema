@@ -1,0 +1,55 @@
+
+{
+  "name": "T3 - Solicitar Cotações",
+  "steps": 1,
+  "elements": [
+    { "key": "section_header", "type": "section", "cols": 12, "elements": [
+      { "key": "h1_title", "title": "SOLICITAÇÃO DE COTAÇÕES", "type": "h1", "cols": 12 }
+    ] },
+    { "key": "section_dados", "type": "section", "cols": 12, "elements": [
+      { "key": "h2_dados", "title": "Dados da Solicitação (somente leitura)", "type": "h2", "cols": 12 },
+      { "key": "descricao", "title": "Descrição / TR", "type": "textarea", "cols": 12, "readonly": true },
+      { "key": "modalidade", "title": "Modalidade", "type": "input", "cols": 6, "readonly": true },
+      { "key": "prazo", "title": "Prazo desejado", "type": "input-date", "cols": 6, "readonly": true }
+    ] },
+    { "key": "section_itens", "type": "section", "cols": 12, "elements": [
+      { "key": "h2_itens", "title": "Itens/Serviços para cotação", "type": "h2", "cols": 12 },
+      { "key": "itens", "title": "Itens", "type": "repeatable", "cols": 12,
+        "schema": {
+          "produto_servico": { "type": "input", "title": "Produto/Serviço", "required": true, "cols": 6 },
+          "quantidade": { "type": "input", "title": "Quantidade", "required": true, "cols": 3 },
+          "unidade": { "type": "input", "title": "Unidade", "required": true, "cols": 3 },
+          "especificacoes": { "type": "textarea", "title": "Especificações técnicas", "required": true, "cols": 12 }
+        }
+      }
+    ] },
+    { "key": "section_fornecedores", "type": "section", "cols": 12, "elements": [
+      { "key": "h2_fornecedores", "title": "Fornecedores convidados", "type": "h2", "cols": 12 },
+      { "key": "fornecedores_convidados", "title": "Lista de fornecedores", "type": "repeatable", "cols": 12,
+        "schema": {
+          "razao_social": { "type": "input", "title": "Razão Social", "required": true, "cols": 6 },
+          "cnpj": { "type": "input", "title": "CNPJ", "required": true, "cols": 3, "help": "Informe CNPJ válido." },
+          "email_contato": { "type": "input", "title": "E-mail de contato", "required": true, "cols": 3 },
+          "prazo_envio_proposta": { "type": "input-date", "title": "Prazo para envio da proposta", "required": true, "cols": 4 }
+        }
+      },
+      { "key": "criterio_julgamento", "title": "Critério de julgamento", "type": "select", "cols": 4, "required": true,
+        "titleMap": [
+          { "value": "Menor preço", "name": "Menor preço" },
+          { "value": "Técnica e preço", "name": "Técnica e preço" },
+          { "value": "Melhor proposta", "name": "Melhor proposta" }
+        ]
+      }
+    ] },
+    { "key": "section_anexos", "type": "section", "cols": 12, "elements": [
+      { "key": "h2_anexos", "title": "Anexos da solicitação de cotação", "type": "h2", "cols": 12 },
+      { "key": "modelo_solicitacao", "title": "Modelo de solicitação", "type": "file", "cols": 6, "fileType": "application/pdf" },
+      { "key": "termo_referencia", "title": "Termo de Referência", "type": "file", "cols": 6, "fileType": "application/pdf" }
+    ] },
+    { "key": "section_actions", "type": "section", "cols": 12, "elements": [
+      { "key": "actions", "title": "Ação", "type": "actions", "cols": 12, "elements": [
+        { "key": "submit_cotar", "title": "Enviar cotações", "type": "submit", "style": "btn-primary" }
+      ] }
+    ] }
+  ]
+}

@@ -1,0 +1,40 @@
+
+{
+  "name": "T11 - Receber Bens Comprados",
+  "steps": 1,
+  "elements": [
+    { "key": "section_header", "type": "section", "cols": 12, "elements": [
+      { "key": "h1_title", "title": "RECEBIMENTO DE BENS", "type": "h1", "cols": 12 }
+    ] },
+    { "key": "section_recebimento", "type": "section", "cols": 12, "elements": [
+      { "key": "data_recebimento", "title": "Data de recebimento", "type": "input-date", "cols": 4, "required": true },
+      { "key": "conferencia_quantitativa", "title": "Conferência quantitativa", "type": "select", "multiple": true, "cols": 8, "required": true,
+        "titleMap": [{ "value": "Conferido", "name": "Conferido" }] },
+      { "key": "conferencia_qualitativa", "title": "Conferência qualitativa", "type": "select", "cols": 4, "required": true,
+        "titleMap": [
+          { "value": "Conforme", "name": "Conforme" },
+          { "value": "Não conforme", "name": "Não conforme" }
+        ]
+      }
+    ] },
+    { "key": "section_patrimonio", "type": "section", "cols": 12, "elements": [
+      { "key": "h2_patrimonio", "title": "Dados patrimoniais (se aplicável)", "type": "h2", "cols": 12 },
+      { "key": "patrimonio", "title": "Itens patrimoniais", "type": "repeatable", "cols": 12,
+        "schema": {
+          "descricao": { "type": "input", "title": "Descrição", "cols": 6 },
+          "numero_serie": { "type": "input", "title": "Número de série", "cols": 3 },
+          "etiqueta_patrimonial": { "type": "input", "title": "Etiqueta patrimonial", "cols": 3 }
+        }
+      }
+    ] },
+    { "key": "section_anexos", "type": "section", "cols": 12, "elements": [
+      { "key": "nota_fiscal", "title": "Nota fiscal (PDF)", "type": "file", "cols": 6, "fileType": "application/pdf", "required": true },
+      { "key": "termo_recebimento", "title": "Termo de recebimento (PDF)", "type": "file", "cols": 6, "fileType": "application/pdf" }
+    ] },
+    { "key": "section_actions", "type": "section", "cols": 12, "elements": [
+      { "key": "actions", "title": "Ação", "type": "actions", "cols": 12, "elements": [
+        { "key": "submit_arquivar", "title": "Concluir recebimento e Arquivar", "type": "submit", "style": "btn-primary" }
+      ] }
+    ] }
+  ]
+}
