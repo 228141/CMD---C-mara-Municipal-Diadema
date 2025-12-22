@@ -1,0 +1,86 @@
+
+{
+  "name": "T1 - Verificar Solicitação de Compras",
+  "steps": 1,
+  "elements": [
+    {
+      "key": "section_header",
+      "type": "section",
+      "cols": 12,
+      "elements": [
+        { "key": "h1_title", "title": "VERIFICAÇÃO INICIAL DA SOLICITAÇÃO", "type": "h1", "cols": 12 }
+      ]
+    },
+    {
+      "key": "section_dados_solicitacao",
+      "type": "section",
+      "cols": 12,
+      "elements": [
+        { "key": "h2_dados", "title": "Dados da Solicitação (somente leitura)", "type": "h2", "cols": 12 },
+        { "key": "tipo", "title": "Tipo", "type": "input", "cols": 6, "readonly": true },
+        { "key": "categoria", "title": "Categoria", "type": "input", "cols": 6, "readonly": true },
+        { "key": "modalidade", "title": "Modalidade", "type": "input", "cols": 6, "readonly": true },
+        { "key": "valor_base", "title": "Valor Base", "type": "currency", "cols": 6, "readonly": true },
+        { "key": "prazo", "title": "Prazo", "type": "input-date", "cols": 6, "readonly": true, "help": "Prazo em dias corridos (da abertura)" },
+        { "key": "descricao", "title": "Justificativa / Descrição", "type": "textarea", "cols": 12, "rows": 4, "readonly": true }
+      ]
+    },
+    {
+      "key": "section_verificacao",
+      "type": "section",
+      "cols": 12,
+      "elements": [
+        { "key": "h2_verificacao", "title": "Verificação", "type": "h2", "cols": 12 },
+        { "key": "conferente_matricula", "title": "Matrícula do conferente", "type": "input", "cols": 4, "required": true },
+        { "key": "data_verificacao", "title": "Data da verificação", "type": "input-date", "cols": 4, "required": true },
+        {
+          "key": "checklist_documentos",
+          "title": "Checklist de documentos",
+          "type": "select",
+          "cols": 12,
+          "required": true,
+          "multiple": true,
+          "titleMap": [
+            { "value": "tr", "name": "Termo de Referência / Especificações" },
+            { "value": "justificativa", "name": "Justificativa técnica" },
+            { "value": "anexos", "name": "Anexos em PDF válidos" }
+          ]
+        },
+        { "key": "pendencias", "title": "Pendências encontradas", "type": "textarea", "cols": 12, "help": "Descreva as pendências, se houver." },
+        {
+          "key": "solicitar_ajustes",
+          "title": "Solicitar ajustes ao requerente?",
+          "type": "select",
+          "cols": 4,
+          "required": true,
+          "titleMap": [
+            { "value": "Sim", "name": "Sim" },
+            { "value": "Não", "name": "Não" }
+          ]
+        },
+        { "key": "mensagem_ajustes", "title": "Mensagem de ajustes ao requerente", "type": "textarea", "cols": 12, "help": "Preencha se for solicitar ajustes." }
+      ]
+    },
+    {
+      "key": "section_anexos",
+      "type": "section",
+      "cols": 12,
+      "elements": [
+        { "key": "h2_anexos", "title": "Documentos complementares", "type": "h2", "cols": 12 },
+        { "key": "file_docs", "title": "Inserir anexos", "type": "file-multiple", "cols": 10, "fileType": "application/pdf" }
+      ]
+    },
+    {
+      "key": "section_actions",
+      "type": "section",
+      "cols": 12,
+      "elements": [
+        { "key": "actions", "title": "Ação", "type": "actions", "cols": 12, "elements": [
+          { "key": "submit_ok", "title": "Prosseguir", "type": "submit", "style": "btn-primary" },
+          { "key": "submit_devolver", "title": "Devolver ao Requerente", "type": "submit", "style": "btn-secondary" }
+        ] }
+      ]
+    }
+  ]
+}
+``
