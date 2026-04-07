@@ -1,3 +1,8 @@
+// este campo está em "inserir código" para "Funções javascript" do formulário de abertura do "ANTEPROJETO"
+
+// Nome da Função: criarBotaoAjuda
+// Executar função ao carregar formulário? SIM
+
 if (!window.adicionarAjuda) {
     // Insere o CSS no documento
     (function adicionarCssAjuda() {
@@ -231,4 +236,3 @@ if (!window.adicionarAjuda) {
         inserirBotaoAjuda();
     };
 }
-

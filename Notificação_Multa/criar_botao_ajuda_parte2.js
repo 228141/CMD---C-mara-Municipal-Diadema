@@ -1,4 +1,8 @@
-// ajudaInicializa
+// este campo está em "inserir código" para "Funções javascript" do formulário de abertura do "ANTEPROJETO"
+
+// Nome da Função: ajudaInicializa
+
+// Executar função ao carregar formulário? SIM
 
 adicionarAjuda({
   key: 'descricao', // Identificador do campo (nome do campo)
