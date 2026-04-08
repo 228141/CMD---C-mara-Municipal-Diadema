@@ -1,0 +1,157 @@
+// Criação de Novo Formulário
+
+Informações básicas para criação de formulários
+
+Campo de Mascara
+    - A máscara é um trava que só pode ser digitado de acordo com o que está determinado nela
+    - Para número é preciso utilizar "9"
+    - Para letras usa-se a letra "A", pode ser feito a distinção de maiuscula e minuscula
+    - Exemplo: usado para placa de carro (AAA-9999) ou CEP (99999-999) por exemplo
+
+Campo CEP
+    - O CEP pode buscar automáticamente o cep cadastrado através do serviço, sendo utilizado no formato de máscara
+    - 
+
+Campo "DESCRIÇÃO"
+    - Todo formulário precisa ter o campo de descrição, é OBRIGATÓRIO.
+    - O "nome do campo" - obrigatóriamente deve ser 'descricao'
+    - Observação: esse campo existe uma limitação de 2 mil caracteres
+
+Documentos 
+    - Pode ser incluido um botão para inserir um arquivo
+    - ou pode ser incluido um botão para diversos arquivos
+    - Incluir obrigatoriedade, informar o nome do arquivo, assinar o documento.
+
+Botão Submite
+    - Configurado principalmente para a função de cadastrar o processo no sistema.
+    - Executar a função: "formFunctions.submitForm"
+    - Existe outros funções pouco utilizadas no botão, exemplo:
+        - "formFunctions.cleanForm" - limpa todo o formulário
+        - "formFunctions.saveDraft" - salva tudo o que foi preenchido
+        - "formFunctions.removeDraft" - remove o que já foi salvo
+        - "formFunctions.previousStep" 👉 Vai para a etapa anterior do formulário
+            - Em termos simples: Volta para o step anterior
+            - Geralmente usado em um botão “Voltar”
+        - "formFunctions.nextStep" 👉 Avança para a próxima etapa do formulário
+            - Em termos simples: Vai para o próximo step
+            - Usado em botões como “Próximo” ou “Continuar”
+
+CONFIGURAÇÃO DAS INTEGRAÇÕES
+
+A integração irá preencher automáticamente campos através destas integrações.
+Para que as integrações funcionem é necessário que exista algumas variáveis obrigatória, e para que o formulário funcione corretamente, sendo incluidos no "Campos Ocultos"
+
+Campos Ocultos (obrigatórios)
+    - cdClasse (valor em branco)
+    - cdSujeito (valor em branco) 
+        - utilizado para configurar um interessado no formulário de abertura ele será um sujeito.
+    - cdSujeito1 (valor em branco)
+        - utilizado para configurar mais de um interessado - por exemplo "um representante"
+    - cdSujeito2 (valor em branco)
+        - utilizado para configurar outro interessado - por exemplo "um responsável técnico"
+    - flTipoProcesso 
+        Utilizado para os tipos de processos, sendo valor em branco irá cadastrar como "processo digital", para outros tipos conforme abaixo:
+        Valor - "G": "Documento Digital"
+        Valor - "D": "Processo Digital" - Só que "D" é o Defaut do sistema e não é necessário preencher
+        Valor - "L": "Documento Fisico" 
+        Valor - "F": "Processo Fisico" 
+    - flEmuso (Utilizado sempre o valor "S" - significa sim, uma variável utilizada para fazer uma consulta no banco para buscar o  cdSujeito)
+    - cdSetorAbertura 
+        - Utilizado para identificar o setor atual da pessoa que está autuando o processo.
+        - Quando for utilizado o código de uma sessão de abertura, será sempre aberto nesta sessão.(TESTAR COM OS CÓDIGOS DA CMD) 
+    - cdSetorServico 
+        - Memsa funcionalidade do "cdSetorAbertura" , porém utilizado para o portal Externo
+
+INTEGRAÇÕES
+    Obrigatório criar integração:
+        Dados do usuário
+        CEP
+        Cadastro de processo
+
+    Configurar integração - "Interessado"
+        - Preencher os dados obrigatórios pedidos na configuração.
+        - * Identificação - Nome da integração (Interessado - por exemplo)
+        - * Evento - defini quando a integração vai acontecer, por exemplo:
+            - Ao carregar a página
+            - Ao enviar resposta
+            - Ao alterar o campo e etc...
+        - * Campo - Selecionar o campo que irá disparar o preenchimento ao ser preenchido com a configuração da integração, por exemplo: "CPF do Requerente"
+        - * Executar serviço 
+            - Para executar o serviço de interessado é necessário selecionar o serviço "cdt-pessoa"
+        - * Operação
+            - [POST] - /api/pessoa/find/one - (essa operação busca as informações do CPF do interessado, como nome, e-mail, telefone etc, no banco de dados e tras os paramentros e respostas que o serviço irá trazer, e pode ser preenchido no formulário caso seja selecionados)
+                - Parametros "Entrada"
+                    - flEmuso (oculto) - flEmuso
+                        * Obrigatório - Sempre selecionar esse campo para trazer usuários ativos do sistema.
+                    - cdSujeito (Oculto) - cdSujeito
+                        * Obrigatório - é o código do ID que está no banco, e definir você como usuário, sendo importante para a itegração com o cadastro do processo.    
+                    - CPF do requerente - nuDocumento
+                        O CPF é um parametro de entrada e deve ser selecionado o "nuDocumento"
+                - Resposta
+                    - Deve ser selecionado os campos que serão preenchidos:
+                        Nome do Requerente - deNome
+                        telefone - nuTelefone
+                        Celular - nuCelular
+                        E-mail - deEmail
+
+    Configuração de CEP
+        - Preencher os dados obrigatórios pedidos na configuração.
+        - * Identificação - Nome da integração (CEP)
+        - * Evento - Ao alterar campo
+        - * Campo - CEP
+        - * Executar serviço - BuscaCEP
+        - * Operação - [GET] - /{cep}
+            Paramentros
+                CEP - cep
+            Resposta
+                Logradouro - Logradouro
+                Bairro - Bairro
+                Município - localidade
+                UF - uf
+
+    Configuração - CadastrarProcesso
+        - Preencher os dados obrigatórios pedidos na configuração.
+        - * Identificação - Nome da integração (CEP)
+        - * Evento - Ao enviar resposta
+        - * Executar serviço - cpa-core-backend
+        - * Operação - [POST] - /s/processo/novo-processo
+            Paramentros
+                cdClasse (oculto) - cdClasse
+                cdSujeito (oculto) - cdSujeitoLogado
+                cdSujeito1 (oculto) - cdSujeito_1
+                flTipoProcesso (oculto) - flTipoProcesso
+                cdSetorAbertura (oculto) - cdSetorAbertura
+                Descrição da Solicitação - descricao
+            Resposta
+                Logradouro - Logradouro
+                Bairro - Bairro
+                Município - localidade
+                UF - uf
+    
+
+
+
+
+
+                
+
+
+
+
+        
+        
+
+
+
+
+
+// FORMULÁRIOS EXEMPLO DE OUTROS CLIENTES
+
+COPASA:
+Formulário com exemplo de mapa
+[CAPACITA ADM] - Formulário de cadastro exemplo
+
+
+// inserir cor nos campos de texto:
+
+📩<font color="red">AVISO:</font> Insira documentos relevantes, no formato PDF, quando possível.
