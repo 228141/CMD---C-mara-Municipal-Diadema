@@ -60,7 +60,9 @@ Campos Ocultos (obrigatórios)
         - Utilizado para identificar o setor atual da pessoa que está autuando o processo.
         - Quando for utilizado o código de uma sessão de abertura, será sempre aberto nesta sessão.(TESTAR COM OS CÓDIGOS DA CMD) 
     - cdSetorServico 
-        - Memsa funcionalidade do "cdSetorAbertura" , porém utilizado para o portal Externo
+        - Mesma funcionalidade do "cdSetorAbertura" , porém utilizado para o portal Externo
+    - cdUserLogado
+        - (Observação - verificar este item) 
 
 INTEGRAÇÕES
     Obrigatório criar integração:
@@ -152,6 +154,3 @@ Formulário com exemplo de mapa
 [CAPACITA ADM] - Formulário de cadastro exemplo
 
 
-// inserir cor nos campos de texto:
-
-📩<font color="red">AVISO:</font> Insira documentos relevantes, no formato PDF, quando possível.
