@@ -1,0 +1,41 @@
+
+VARIÁVEIS DE FLUXO OBRIGATÓRIAS?
+    CPA.cdProcesso
+    *processo
+    ano
+    orgao
+    descricao
+    autor
+    nuProcessoFormatado
+    numProcesso
+    linkPasta
+    *cdOrgaoSetor
+    *detalhamento
+    *nomeInteressadoPrincipal
+    *numeroFormatado
+    *numeroProcesso
+
+TAREFAS OBRIGATÓRIOS?
+    
+    Tarefa 1 - Buscar informações do processo (Tarefa de Serviço)
+        
+        Enviadas para o executável:
+            CPA.cdProcesso      -> processo
+
+        Atualizadas pelo executável?
+            ano                 -> ano
+            orgao               -> cdOrgaoSetor
+            descricao           -> detalhamento
+            autor               -> nomeInteressadoPrincipal
+            nuProcessoFormatado -> numeroFormatado
+            numProcesso         -> numeroProcesso
+
+    Tarefa 2 - Gerar Link (Tarefa de Execução de Script)
+        
+        Enviadas para o JavaScript:
+            orgao       -> cdOrgaoSetor
+            ano         -> nuano
+            numProcesso -> numeroProcesso
+
+        Atualizadas pelo executável?
+            linkPasta   -> linkPasta
