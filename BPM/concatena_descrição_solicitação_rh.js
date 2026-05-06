@@ -98,6 +98,10 @@ else if (model.tipoSolicitacao == 11) {
         "Solicitações ao RH - Licenças.\n" +
         "Tipo: " + nomeLicenca + ".";
 }
+else if (model.tipoSolicitacao == 12) {
+    model.descricao =
+        "Solicitações ao RH - Suspenção de Férias.";
+}
 else {
     model.descricao =
         "Solicitações ao RH. \n" +
