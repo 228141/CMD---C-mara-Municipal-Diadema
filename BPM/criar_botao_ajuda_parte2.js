@@ -9,3 +9,21 @@ adicionarAjuda({
   titulo: 'Descrição da emenda',  // Título exibido no campo de ajuda
   texto: 'Descreva, de forma objetiva, a emenda solicitada. Apresente um resumo claro da necessidade identificada e da finalidade da proposição.<br> Esse resumo será usado para análise inicial da solicitação.' // Texto explicativo exibido como ajuda
 });
+
+//Descrição da Solicitação ao RH.
+
+adicionarAjuda({
+  key: 'descricao', // Identificador do campo (nome do campo)
+  titulo: 'Descrição da Solicitação ao RH.',  // Título exibido no campo de ajuda
+  texto: 'Além das informações que já constam abaixo, complete caso necessário, de forma objetiva a solicitação. <br> Apresente um resumo claro da necessidade identificada e da finalidade do pedido.<br> Esse resumo será usado para análise inicial da solicitação.' 
+// Texto explicativo exibido como ajuda
+});
+
+// Descrição da Justificativa de Falta.
+
+adicionarAjuda({
+  key: 'descricao', // Identificador do campo (nome do campo)
+  titulo: 'Descrição de JUSTIFICATIVA DE FALTA, ATRASO OU SAÍDA ANTECIPADA.',  // Título exibido no campo de ajuda
+  texto: 'Além das informações que já constam abaixo, complete caso necessário, de forma objetiva a justificativa. <br> Apresente um resumo claro da necessidade identificada e da finalidade do pedido.<br> Esse resumo será usado para análise inicial da solicitação.' 
+// Texto explicativo exibido como ajuda
+});
