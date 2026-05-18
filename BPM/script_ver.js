@@ -1,41 +1,30 @@
-Nome da variável que deve ser pega? Sigla Setor Solicitante (sgSetorPadrao)
+// Nome da variável que deve ser pega? Sigla Setor Solicitante (sgSetorPadrao)
 
-SCRIPT:
+Vereadores:
 
-var nuCpf == model.sgSetorPadrao
+1 ANGELO PAULINO DA SILVA
+2 CICERO ANTONIO DA SILVA
+3 FERNANDA SILVA DURAES
+4 FRANCISCO GONÇALVES NOGUEIRA JUNIOR
+5 GERALDO ANTONIO DA SILVA
+6 GILSON DE MOURA BEZERRA
+7 JEFERSON LEITE RIBEIRO
+8 JEFFERSON MARQUES DE SOUZA MOREIRA"
+9 JEOACAZ COELHO MACHADO
+10 JERRI DESSONE DA SILVA REGO
+11 JOSE HUDSOMAR RODRIGUES JARDIM
+12 JOSEMUNDO DARIO QUEIROZ
+13 LAURETO LIMA MEDRADO
+14 LUCAS ALMEIDA GOMES
+15 MARCIO PASCHOAL GIUDICIO JUNIOR
+16 ORLANDO VITORIANO DE OLIVEIRA
+17 PATRICIA FERREIRA
+18 REINALDO ANTONIO MEIRA
+19 RODRIGO CAPEL
+20 SERGIO RAMOS SILVA
+21 TALABI UBIRAJARA CERQUEIRA FAHEL
 
-if (sgSetorPadrao == "CMD/E01_VER_REINALDO"){
-nuCpf = "161.736.708-79";
-
-
-} else if (sgSetorPadrao==="undefined"){
-descricao="Olá! O seu cadastro do processo deverá ser indicado o CPF do vereador solicitante. Por favor entrar em contato com o departamento de TI";
-
-}
-
-var setor = sgSetorPadrao;
-
-switch (setor) {
-
-    case "CMD/PRE/SGL/DAF/DTI":
-        nuCpf = "29466353845";
-        break;
-}
-
-model.nuCpf
-
-if (interessado === "1") {
-    nuCpf = "26366353845";
-}
-
-if (interessado === "2") {
-    nuCpf = "27649394859";
-}
-
-if (interessado === "3") {
-    nuCpf = "213.324.658-46";
-}
-;
+//--------------//-----------------
 
 CMD/GV - Gabinete de Vereador
 	SIGLA				NOME SETOR
@@ -61,7 +50,7 @@ CMD/GV - Gabinete de Vereador
  CMD/E20_VER_MARCIOJR - Gabinete do Vereador MARCIO PASCHOAL GIUDICIO JUNIOR - 408.576.348-28
  CMD/E21_VER_JERRY - Gabinete do Vereador JERRI DESSONE DA SILVA REGO - 139.947.628-98
 
-----------//--------------------
+//----------//--------------------
 
 var interessado = document.getElementById("interessado").value;
 
