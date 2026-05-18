@@ -129,23 +129,20 @@ INTEGRAÇÕES
                 Bairro - Bairro
                 Município - localidade
                 UF - uf
-    
 
+FORMULÁRIOS PARA CONSULTA:
 
+[CMD] Formulário para consultar código do setor - 5ªVERSÃO - 
+Informe a sigla da unidade para visualizar o código do setor
+Qual o intuito do formulário? R: Consultar o código de setores de maneira rápida, atualmente utilizamos o banco de dados e dessa forma somente algumas pessoas possuem acesso e não é uma consulta rápida, o uso da API permite que qualquer pessoa da equipe consulte de maneira rápida.
 
+[SOFTPLAN] - Busca Interessado e Usuários via e-mail
+Qual o intuito do formulário?
+Resposta: verificar qual o e-mail do interessado já está cadastrado e em qual CPF ou CNPJ , pois o sistema não permite que o e-mail esteja em dois cadastros diferentes.
 
-
-                
-
-
-
-
-        
-        
-
-
-
-
+[PMB] Busca por classificações e setores
+Qual o intuito do formulário? 
+Resposta: Realizar a busca de assuntos e classificações dos códigos desses assuntos
 
 // FORMULÁRIOS EXEMPLO DE OUTROS CLIENTES
 
