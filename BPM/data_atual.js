@@ -20,3 +20,31 @@ var ano = dataAtual.getFullYear();
 
 
 model.data = 'Diadema, ' + dia + ' de '+ mes + ' de ' + ano + '.'
+
+//-------------------------
+
+var ddAtual = new Date();
+var dia = ddAtual.getDate();
+var mes = ddAtual.getMonth();
+var ano = ddAtual.getFullYear();
+
+var meses = [
+  "janeiro", "fevereiro", "março", "abril", "maio", "junho",
+  "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
+];
+
+if (dia < 10) {
+  dia = '0' + dia;
+}
+
+var dataFormatada = dia + ' de ' + meses[mes] + ' de ' + ano;
+
+model.dataAtual = dataFormatada;
+
+const dataAtual = document.getElementById("dataAtual");
+if (dataAtual) {
+  dataAtual.style.textAlign = "center"; // Centraliza o texto
+  dataAtual.style.fontWeight = "500";   // (opcional)
+  dataAtual.style.fontSize = "16px";    // (opcional)
+  dataAtual.style.color = "#333";       // (opcional)
+}
