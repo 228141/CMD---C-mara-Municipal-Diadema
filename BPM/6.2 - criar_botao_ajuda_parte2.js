@@ -27,3 +27,19 @@ adicionarAjuda({
   texto: 'Além das informações que já constam abaixo, complete caso necessário, de forma objetiva a justificativa. <br> Apresente um resumo claro da necessidade identificada e da finalidade do pedido.<br> Esse resumo será usado para análise inicial da solicitação.' 
 // Texto explicativo exibido como ajuda
 });
+
+// Descrição do Termo de Deliberação
+
+adicionarAjuda({
+  key: 'descricao', // Identificador do campo (nome do campo)
+  titulo: 'Descrição do TERMO DE DELIBERAÇÃO',  // Título exibido no campo de ajuda
+  texto: 'Descreva, de forma objetiva, o termo de deliberação. <br> Apresente um resumo claro da necessidade identificada e da finalidade do termo.<br> Esse resumo será usado para análise inicial da solicitação.' // Texto explicativo exibido como ajuda
+});
+
+// Descrição do Autógrafo
+
+adicionarAjuda({
+  key: 'descricao', // Identificador do campo (nome do campo)
+  titulo: 'Descrição do AUTÓGRAFO',  // Título exibido no campo de ajuda
+  texto: 'Descreva, de forma objetiva a solicitação. <br> Apresente um resumo claro da necessidade identificada.<br> Esse resumo será usado para análise inicial da solicitação.' // Texto explicativo exibido como ajuda
+});

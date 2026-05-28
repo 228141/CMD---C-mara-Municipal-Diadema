@@ -1,4 +1,4 @@
-// este campo está em "inserir código" para "Funções javascript" do formulário de abertura do "ANTEPROJETO"
+// este campo está em "inserir código" para "Funções javascript" de diversos formulários e no formulário de abertura do "ANTEPROJETO"
 
 // Nome da Função: criarBotaoAjuda
 // Executar função ao carregar formulário? SIM
