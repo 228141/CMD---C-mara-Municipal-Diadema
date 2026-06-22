@@ -48,3 +48,4 @@ if (dataAtual) {
   dataAtual.style.fontSize = "16px";    // (opcional)
   dataAtual.style.color = "#333";       // (opcional)
 }
+

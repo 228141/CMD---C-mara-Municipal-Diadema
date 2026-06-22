@@ -12,7 +12,9 @@ Referente o dia ${model.solicita_dia || 'não informado'}, para a(s) quantidade 
 
     5: () => "Justificativa - Falta injustificada.",
 
-    6: () => getDescricaoServicoEleitoral(model)
+    6: () => "Justificativa de ausência em sessão ordinária.",
+
+    7: () => getDescricaoServicoEleitoral(model)
 };
 const getDescricaoServicoEleitoral = (model) => {
     const base = "Justificativa - Prestação de Serviço Eleitoral.";
@@ -122,3 +124,38 @@ else {
 (Descreva aqui de forma resumida a solicitação).`;
 }
 
+
+-----------------
+
+const descricoes = {
+    1: () => `Justificativa - Abono de Falta.
+Referente o dia ${model.solicita_dia || 'não informado'}, para a(s) quantidade de ${model.numeroFaltas || 0} falta(s), conforme segue.`,
+
+    2: () => "Justificativa - Atestado médico (até 5 dias).",
+
+    3: () => "Justificativa - Doação de sangue (2 dias por ano civil, com interstício de 6 meses).",
+
+    4: () => "Justificativa - Falta justificada.",
+
+    5: () => "Justificativa - Falta injustificada.",
+
+    6: () => getDescricaoServicoEleitoral(model)
+};
+const getDescricaoServicoEleitoral = (model) => {
+    const base = "Justificativa - Prestação de Serviço Eleitoral.";
+
+    const tipos = {
+        1: `${base}
+Referente ao alistamento eleitoral.`,
+
+        2: `${base}
+Referente a folga eleitoral, para ${model.qtdDiasFolga || 0} dias de folga a partir de ${model.inicioPeriodoFolga || 'não informado'}.`
+    };
+
+    return tipos[model.tipoServicoEleitoral] || base;
+};
+
+model.descricao =
+    (descricoes[model.tipoSolicitacao]?.()) ||
+    `Justificativa de Falta, Atraso ou Saída Antecipada.
+(Descreva aqui de forma resumida a solicitação).`;
