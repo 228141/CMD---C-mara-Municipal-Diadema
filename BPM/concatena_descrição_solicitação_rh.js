@@ -107,3 +107,30 @@ else {
         "Solicitações ao RH. \n" +
         "(Descreva aqui de forma resumida a solicitação).";
 }
+
+
+------------------//----------------------
+
+const tipoSolicitacao = {
+    1: () => "Férias",
+
+    2: () => "Adiantamento de 13º salário",
+
+    3: () => "Progressão funcional",
+
+    4: () => "Convênio médico",
+
+    5: () => "Certidão para fins de aposentadoria",
+
+    6: () => "Certidão para abono de permanência",
+
+    7: () => "Certidões diversas",
+
+    8: () => "Nomeação / Exoneração",
+    
+    9: () => "Apresentação de documento",
+
+    10: () => "Licenças",
+
+    11: () => "Outras Solicitações ao RH",
+};
