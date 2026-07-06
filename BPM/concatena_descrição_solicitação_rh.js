@@ -109,7 +109,7 @@ else {
 }
 
 
-------------------//----------------------
+//------------------//----------------------
 //Formulário da Tarefa "analisar a Solicitação"
 
 const tipoSolicitacao = {
@@ -126,7 +126,7 @@ const tipoSolicitacao = {
     11: () => "Outras Solicitações ao RH"
 };
 
-------------/-------------------
+//------------/-------------------
 
 const tipoSolicitacao = {
     1: "Férias",
@@ -141,3 +141,71 @@ const tipoSolicitacao = {
     10: "Licenças",
     11: "Outras Solicitações ao RH"
 };
+
+//------//-----
+
+
+// Comunique-se do fluxo:
+
+<div id="comunicado-solar-bpm" style="font-family: Verdana, Geneva, sans-serif; background-color: #f7f8f9; color: #333333; margin: 0; padding: 10px;">
+    
+    <div class="main-container" style="max-width: 800px; margin: 0 auto; background-color: #ffffff; padding: 0;">
+        <div class="section" style="padding: 20px;">
+            <img src="https://www.cmdiadema.sp.gov.br/img/brasao.png" 
+            style="display: block; height: auto; margin: 0 auto; max-width: 10%; border: none; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); width: 780px;" alt="Solar BPM Banner">
+        </div>
+        
+        <div class="divider" style="border-top: 1px solid #BBBBBB; margin: 10px 20px;"></div>
+        
+        <div class="section" style="padding: 20px;">
+            <h1 style="font-size: 14px; line-height: 1.6; margin: 15px 0; text-align: left; font-weight: bold;">
+                Esta mensagem foi gerada automaticamente por Câmara Municipal de Diadema, portanto NÃO responda este e-mail.
+            </h1>
+    </div>
+    <div class="divider" style="border-top:1px solid #BBBBBB; margin:10px 20px;"></div>
+
+    <div class="section" style="padding:20px;">
+        <h2 style="color: #0059DB; font-size:14px; font-weight:bold; text-align:left; margin:0 0 20px 0; line-height:1.2;">
+            Prezado(a) usuário(a).
+        </h2>
+
+        <p style="font-size:14px; line-height:1.6; margin:15px 0; text-align:left;">
+            Este e-mail é para comunicar que o processo referente à "Solicitação ao RH" chegou ao fim.
+        </p>
+
+        <p style="font-size:14px; line-height:1.6; margin:15px 0; text-align:left;">
+            Para acessar o processo e verificar as informações, basta acessar o sistema Solar BPM:
+        </p>
+        <a href="https://cm-diadema.solarbpm.softplan.com.br/portal/">
+            Acessar Solar BPM
+        </a>
+    </div>
+
+    <div class="section" style="padding: 20px;">
+
+        <p style="font-size: 14px; line-height: 1.6; margin: 15px 0; text-align: direct;">
+            Em caso de dúvidas, entre em contato com a unidade responsável do Recursos Humanos.
+        </p>
+        <p style="font-size: 14px; line-height: 1.6; margin: 15px 0; text-align: left; font-weight: bold;">
+            Atenciosamente
+        </p>
+        <p style="font-size: 14px; line-height: 1.6; margin: 15px 0; text-align: left; font-weight: bold;">
+            Câmara Municipal de Diadema.
+        </p>
+    </div>
+
+    <div class="divider" style="border-top: 1px solid #BBBBBB; margin: 10px 20px;"></div>
+
+        <div class="section" style="padding: 20px; text-align: center;">
+
+            <p style="font-size: 14px; line-height: 1.6; margin: 15px 0;">
+                Estamos comprometidos com a melhoria contínua!
+            </p>
+
+            <h1 style="color: #0059DB; font-size: 24px; font-weight: bold; margin: 10px 0;">SEGUIMOS JUNTOS!</h1>
+            
+            <img src="https://sempapel.pmp.sp.gov.br/Imagens/pesquisa/rodape_softplan.png"
+            style="display: block; height: auto; margin: 20px auto 0; max-width: 100%; border: none; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); width: 780px;" alt="Rodapé Final">
+        </div>
+    </div>
+</div>
