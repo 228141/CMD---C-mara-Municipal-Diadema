@@ -8,6 +8,282 @@ const mensagemPadrao = `
 (Descreva aqui de forma resumida a indicação, sem este preenchimento o processo não será cadastrado).`;
 
 const classificacoes = {
+    1	:	"24º BPM - POLICIAMENTO	"	,
+    2	:	"AUDIÊNCIA PÚBLICA	"	,
+    3	:	"AUTORIZAÇÃO PARA USO DE VEÍCULO OFICIAL	"	,
+    4	:	"CETESB - POLUIÇÃO [PEDIR FISCALIZAÇÃO]	"	,
+    5	:	"CMD - CÂMARA MUNICIPAL (PRESIDÊNCIA OU MESA)	"	,
+    6	:	"CMD - PEDIDO DE INFORMAÇÕES AO PRESIDENTE DA CÂMARA	"	,
+    7	:	"COMGÁS - MANUTENÇÃO	"	,
+    8	:	"COMUNICAÇÃO	"	,
+    9	:	"CORRESPONDECIAS DIVERSAS	"	,
+    10	:	"DELEGACIA DE ENSINO	"	,
+    11	:	"DIRETORIA REGIONAL DE ENSINO - PEDIDOS GERAIS	"	,
+    12	:	"ECOVIAS - SOLICITAÇÕES DIVERSAS	"	,
+    13	:	"EMTU - SOLICITAÇÕES DIVERSAS	"	,
+    14	:	"EMTU - TRANSPORTE COLETIVO IMPLANTAR NOVA LINHA DE ÔNIBUS	"	,
+    15	:	"EMTU E PMD - CRIAÇÃO OU PROLONGAMENTO DE LINHA DE ÔNIBUS	"	,
+    16	:	"ENEL - DE DIADEMA (PEDIDOS GERAIS)	"	,
+    17	:	"ENEL - ENERGIA ELÉTRICA EM NÚCLEOS HABITACIONAIS	"	,
+    18	:	"ENEL - LIMPEZA DE FIAÇÃO ELÉTRICA	"	,
+    19	:	"ENEL - LIMPEZA DE TERRENO DA ENEL	"	,
+    20	:	"ESCOLAR MANUTENÇÃO	"	,
+    21	:	"FUNDAÇÃO DE DESENVOLVIMENTO ESCOLAR (OBRAS ESCOLARES)	"	,
+    22	:	"GCM - INTENSIFICAÇÃO DE POLICIAMENTO	"	,
+    23	:	"GCM - POLICIAMENTO EM ESCOLA E DEPARTAMENTOS PÚBLICOS	"	,
+    24	:	"GESTÃO / FISCALIZAÇÃO	"	,
+    25	:	"ILUMINAÇÃO PÚBLICA	"	,
+    26	:	"INDICAÇÃO AO GOVERNO DO ESTADO	"	,
+    27	:	"LINHA DE ÔNIBUS (ALTERAR ITINERÁRIO)	"	,
+    28	:	"MOÇÃO DE APLAUSO	"	,
+    29	:	"PASSARELA NA IMIGRANTES	"	,
+    30	:	"PEDIDO DE CERTIDÃO PARA FINS DE APOSENTADORIA	"	,
+    31	:	"PEDIDO DE CERTIDÃO PARA FINS DE BIÊNO	"	,
+    32	:	"PERMISSIONÁRIA DE TELECOMUNICAÇÕES	"	,
+    33	:	"PMD - ABERTURA DE RUA	"	,
+    34	:	"PMD - ABRIGO DE ÔNIBUS MANUTENÇÃO/REFORMA/COBERTURA	"	,
+    35	:	"PMD - ACADEMIA DA CIDADE	"	,
+    36	:	"PMD - AGÊNCIA DO CORREIO	"	,
+    37	:	"PMD - AGÊNCIA DO INSS	"	,
+    38	:	"PMD - ALAGAMENTO EM RUA	"	,
+    39	:	"PMD - APREENSÃO DE ANIMAIS	"	,
+    40	:	"PMD - ASFALTO MANUTENÇÃO	"	,
+    41	:	"PMD - AUTOMÓVEIS ABANDONADOS EM VIA PÚBLICA (RETIRAR)	"	,
+    42	:	"PMD - AUTOMÓVEIS QUE ESTACIONAM EM CIMA DE CALÇADAS (COIBIR)	"	,
+    43	:	"PMD - BLOQUETES (RECOLOCAR/MANUTENÇÃO)	"	,
+    44	:	"PMD - BRINQUEDOS EM PRAÇA (INSTALAR OU MANUTENÇÃO)	"	,
+    45	:	"PMD - BUEIROS / BOCA DE LOBO (CONSTRUÇÃO/MANUTENÇÃO)	"	,
+    46	:	"PMD - BURACO(S) TAPAR	"	,
+    47	:	"PMD - CAÇAMBA DE LIXO	"	,
+    48	:	"PMD - CAÇAMBA DE RECOLHIMENTO DE ENTULHO (ECOPONTO)	"	,
+    49	:	"PMD - CADEIRANTE CONSTRUIR RAMPA DE ACESSO	"	,
+    50	:	"PMD - CALÇADA (CONSTRUIR/CONSERTAR NOTIFICAR PROPRIETÁRIO)	"	,
+    51	:	"PMD - CALÇADA EM ESCOLA (CONSTRUIR / CONSERTAR)	"	,
+    52	:	"PMD - CALÇADA EM PRÓPRIO MUNICIPAL (MANUTENÇÃO)	"	,
+    53	:	"PMD - CALÇAMENTO EM VIELA (FAZER / CONSERTAR)	"	,
+    54	:	"PMD - CÂMERA DE MONITORAMENTO	"	,
+    55	:	"PMD - CAMPO DE FUTEBOL (MANUTENÇÃO OU REFORMAS )	"	,
+    56	:	"PMD - CANALETE DE ÁGUAS PLUVIAIS ESBURACADAS (CONSERTAR)	"	,
+    57	:	"PMD - CANALIZAÇÃO DE CÓRREGO	"	,
+    58	:	"PMD - CANALIZAÇÃO DE ESGOTO DE RESIDÊNCIA NOTIFICAR PROPRIETÁRIO	"	,
+    59	:	"PMD - CARGA E DESCARGA DE MERCADORIAS (DEMARCAR)	"	,
+    60	:	"PMD - CESTOS DE LIXO (INSTALAR)	"	,
+    61	:	"PMD - CICLOVIA (CONSTRUÇÃO)	"	,
+    62	:	"PMD - COLETA DE LIXO SELETIVO	"	,
+    63	:	"PMD - CONSTRUÇÃO DE MURO DE ARRIMO (NOTIFICAR PARTICULAR)	"	,
+    64	:	"PMD - CORRIMÃO (INSTALAR / CONSERTAR)	"	,
+    65	:	"PMD - CORTAR ÁRVORES	"	,
+    66	:	"PMD - CRECHE (CONSTRUIR)	"	,
+    67	:	"PMD - DEFICIENTE PINTURA NO SOLO DEMARCAR VAGA NA FRENTE	"	,
+    68	:	"PMD - DEMARCAÇÃO DE ESTACIONAMENTO DE VEÍCULOS	"	,
+    69	:	"PMD - DEMARCAR ÁREA CARGA E DESCARGA MERCADORIAS	"	,
+    70	:	"PMD - DESOBSTRUÇÃO DE PASSAGEM DE ÁGUAS PLUVIAIS	"	,
+    71	:	"PMD - DESRATIZAÇÃO	"	,
+    72	:	"PMD - ENERGIA ELÉTRICA EM NÚCLEOS HABITACIONAIS (PRAÇAS OU)	"	,
+    73	:	"PMD - ENTULHO (RETIRAR)	"	,
+    74	:	"PMD - ESCADARIA EM VIELA (CONSTRUIR / REFORMAR)	"	,
+    75	:	"PMD - ESCOLA MUNICIPAL (FAZER MANUTENÇÃO)	"	,
+    76	:	"PMD - FAIXA DE PEDESTRES	"	,
+    77	:	"PMD - FEIRA LIVRE	"	,
+    78	:	"PMD - GINÁSIO POLIESPORTIVO	"	,
+    79	:	"PMD - GUIAS E SARJETAS	"	,
+    80	:	"PMD - INDICAÇÕES DIVERSAS	"	,
+    81	:	"PMD - INSTALAR LIXEIRA	"	,
+    82	:	"PMD - LIGAÇÃO DE ESGOTO (P/PREFEITURA NOTIFICAR)	"	,
+    83	:	"PMD - LIMPEZA DE BUEIROS / BOCA DE LOBO	"	,
+    84	:	"PMD - LIMPEZA DE CALÇADAS	"	,
+    85	:	"PMD - LIMPEZA DE CÓRREGO/LAGO	"	,
+    86	:	"PMD - LIMPEZA DE ENTULHO E LIXO	"	,
+    87	:	"PMD - LIMPEZA DE RUA (ROÇAR MATO DOS JARDINS E CANTEIROS)	"	,
+    88	:	"PMD - LIMPEZA DE TERRENO ROÇAR MATO E MURAR TERRENO (NOTIFICAR PARTICULAR)	"	,
+    89	:	"PMD - LIMPEZA DE TERRENOS (RETIRAR ENTULHO/TERRA/LIXO)	"	,
+    90	:	"PMD - LINHA DE ÔNIBUS	"	,
+    91	:	"PMD - LOMBADA / LOMBAFAIXA	"	,
+    92	:	"PMD - MÃO ÚNICA (TRANSFORMAR VIA EM)	"	,
+    93	:	"PMD - MURO E PASSEIO	"	,
+    94	:	"PMD - NÚCLEO DE ATENDIMENTO À POPULAÇÃO	"	,
+    95	:	"PMD - NUMERAÇÃO DE RESIDÊNCIA (REGULARIZAR)	"	,
+    96	:	"PMD - OLHO DE GATO (SINALIZAÇÃO DE TRÂNSITO)	"	,
+    97	:	"PMD - PASSAGEM / TRAVESSA / VIELA (REVITALIZAR / REFORMAR)	"	,
+    98	:	"PMD - PAVIMENTAÇÃO ASFÁLTICA DE RUA	"	,
+    99	:	"PMD - PEDIDO DE INFORMAÇÕES AO PREFEITO	"	,
+    100	:	"PMD - PLACA DE NOME DE RUA	"	,
+    101	:	"PMD - PLACA INDICATIVA	"	,
+    102	:	"PMD - PLANTIO DE ÁRVORES	"	,
+    103	:	"PMD - PODA DE ÁRVORES	"	,
+    104	:	"PMD - POLÍTICA DE DESENVOLVIMENTO URBANO	"	,
+    105	:	"PMD - PONTO DE ÔNIBUS (INSTALAR E OU REMOVER)	"	,
+    106	:	"PMD - POSTE DE MADEIRA (SUBSTITUIR POR POSTE DE CONCRETO)	"	,
+    107	:	"PMD - POSTE DEFRONTE DE GARAGEM	"	,
+    108	:	"PMD - POSTE NO MEIO A RUA	"	,
+    109	:	"PMD - PRAÇA (CONSTRUIR)	"	,
+    110	:	"PMD - RAMPA DE ACESSO PARA CADEIRANTE	"	,
+    111	:	"PMD - RAMPA SKATE (CONSTRUIR)	"	,
+    112	:	"PMD - REBAIXAMENTO DE GUIAS	"	,
+    113	:	"PMD - RECAPEAMENTO ASFÁLTICO	"	,
+    114	:	"PMD - RECLAMAÇÃO DE ATENDIMENTO EM UBS	"	,
+    115	:	"PMD - REDUTOR DE VELOCIDADE	"	,
+    116	:	"PMD - REFORMA E/OU REVITALIZAÇÃO DE PARQUES E/OU PRAÇAS/EQUIPAMENTO	"	,
+    117	:	"PMD - REFORMA E/OU REVITALIZAÇÃO DE QUADRAS ESPORTIVAS	"	,
+    118	:	"PMD - REMOÇÃO DE POSTE	"	,
+    119	:	"PMD - REMOVER ÁRVORE	"	,
+    120	:	"PMD - REPARO DE CAPA ASFÁLTICA	"	,
+    121	:	"PMD - RETIRADA DE GALHOS DE ÁRVORE	"	,
+    122	:	"PMD - RETIRADA DE TOCO DE ÁRVORE	"	,
+    123	:	"PMD - ROTATÓRIA (CONSTRUIR / RECONSTRUIR)	"	,
+    124	:	"PMD - RUA DE LAZER (AUTORIZAR)	"	,
+    125	:	"PMD - SAMU	"	,
+    126	:	"PMD - SANITÁRIO / BANHEIRO PÚBLICO ( CONSTRUIR )	"	,
+    127	:	"PMD - SARJETÃO (CONSERTAR)	"	,
+    128	:	"PMD - SEMÁFORO	"	,
+    129	:	"PMD - SINALIZAÇÃO DE LOMBADA	"	,
+    130	:	"PMD - SINALIZAÇÃO DE TRÂNSITO EM GERAL	"	,
+    131	:	"PMD - SOLICITAÇÃO DE INTENSIFICAÇÃO DE LINHAS DE TRANSPORTE	"	,
+    132	:	"PMD - SOM EXCESSIVO (NOTIFICAR PARA DIMINUIR VOLUME)	"	,
+    133	:	"PMD - TACHÕES (INSTALAR EM RUA)	"	,
+    134	:	"PMD - TORNEIRA PÚBLICA EM PRAÇA (INSTALAR)	"	,
+    135	:	"PMD - TRANSPORTE COLETIVO IMPLANTAR NOVA LINHA DE ÔNIBUS	"	,
+    136	:	"PMD - TRANSPORTE ESCOLAR	"	,
+    137	:	"PMD - TRANSPORTES	"	,
+    138	:	"PMD - UBS (CONTRATAR MAIS MÉDICOS P/MELHOR ATENDIMENTO)	"	,
+    139	:	"PMD - UBS (REFORMAR E OU CONSTRUÇÃO)	"	,
+    140	:	"PRAÇA (INSTALAR ILUMINAÇÃO)	"	,
+    141	:	"PROJETO DE LEI MUNICIPAL	"	,
+    142	:	"QUEDA DE ENERGIA ELÉTRICA	"	,
+    143	:	"REDE DE ENERGIA ELÉTRICA ENCOSTADA EM RESIDÊNCIA	"	,
+    144	:	"REPARO ILUMINAÇÃO PUBLICA	"	,
+    145	:	"RESPOSTA DE INDICAÇÃO	"	,
+    146	:	"SABESP - ABASTECIMENTO DE ÁGUA	"	,
+    147	:	"SABESP - ÁGUAS SERVIDAS (COIBIR DESPEJO)	"	,
+    148	:	"SABESP - BURACO(S) TAPAR	"	,
+    149	:	"SABESP - CONSERTO DE CALÇADA	"	,
+    150	:	"SABESP - DESENTUPIMENTO DE ESGOTO	"	,
+    151	:	"SABESP - ESGOTO VAZANDO NA CALÇADA	"	,
+    152	:	"SABESP - ESGOTO VAZANDO NA CALÇADA (CULPA DO MORADOR)	"	,
+    153	:	"SABESP - ESGOTO VAZANDO NA RESIDÊNCIA VISTORIA	"	,
+    154	:	"SABESP - LIGAÇÃO DE ÁGUA	"	,
+    155	:	"SABESP - LIGAÇÃO DE ESGOTO	"	,
+    156	:	"SABESP - MANUTENÇÃO DE PV	"	,
+    157	:	"SABESP - NIVELAR TAMPA DE PV	"	,
+    158	:	"SABESP - PEDIDOS DE INFORMAÇÕES À SABESP	"	,
+    159	:	"SABESP - PEDIDOS GERAIS	"	,
+    160	:	"SABESP - RECAPEAMENTO ASFÁLTICO	"	,
+    161	:	"SABESP - REDE DISTRIBUIDORA DE ÁGUA	"	,
+    162	:	"SABESP - REGULARIZAR ABASTECIMENTO	"	,
+    163	:	"SABESP - REPARAR BURACO	"	,
+    164	:	"TRANSFORMADORES DE ENERGIA ELÉTRICA (INSTALAR)	"	,
+    165	:	"TROCA DE LÂMPADA EM POSTE	"	,
+    166	:	"TROCAR LUMINÁRIAS POR LÂMPADAS LED	"	,
+    167	:	"VAGAS ESCOLARES	"	,
+    168	:	"VEÍCULOS QUE ESTACIONAM EM CALÇADAS (COIBIR E MULTAR) ",		
+};
+
+const tipo = classificacoes[model.classificacao] || 'Sem classificação';
+
+// Monta o texto do COLAB
+let textoColab = '';
+
+if (model.colab == 1) {
+    textoColab = `COLAB nº ${model.numeroColab}`;
+} else if (model.colab == 2) {
+    textoColab = 'Não consta nº de COLAB';
+}
+
+// Monta a descrição final
+model.descricao =
+`Indicação - ${tipo}
+${textoColab}
+${mensagemPadrao}`;
+
+//--------------------//------------------------
+
+// atualização descrição 
+var nomeClassificacao = "(Descreva aqui sua solicitação de forma resumida)";
+
+if (model.colab == 1) {
+    model.descricao =
+        "Indicação. Conforme COLAB nº " + 
+        model.numeroColab + "\n" + 
+        nomeClassificacao;
+}
+else if (model.colab == 2) {
+    model.descricao =
+        "Indicação. Não consta nº de COLAB. \n" + 
+        nomeClassificacao;
+}
+
+//Atualização teste
+
+var nomeClassificacao = model.classificacao;
+
+if (model.classificacao == 1) {
+    nomeClassificacao = "24º BPM - POLICIAMENTO";
+}
+else if (model.classificacao == 2) {
+    nomeClassificacao = "ABAIXO ASSINADO";
+}
+else if (model.classificacao == 3) {
+    nomeClassificacao = "AUDIÊNCIA PÚBLICA";
+}
+else if (model.classificacao == 4) {
+    nomeClassificacao = "AUTORIZAÇÃO PARA USO DE VEÍCULO OFICIAL";
+}
+else if (model.classificacao == 5) {
+    nomeClassificacao = "CETESB - POLUIÇÃO [PEDIR FISCALIZAÇÃO ]";
+}
+else if (model.classificacao == 6) {
+    nomeClassificacao = "CMD - CÂMARA MUNICIPAL (PRESIDÊNCIA OU MESA)";
+}
+else if (model.classificacao == 7) {
+    nomeClassificacao = "CMD - PEDIDO DE INFORMAÇÕES AO PRESIDENTE DA CÂMARA";
+}
+else if (model.classificacao == 8) {
+    nomeClassificacao = "COMGÁS - MANUTENÇÃO";
+}
+else if (model.classificacao == 9) {
+    nomeClassificacao = "COMUNICAÇÃO";
+}
+else if (model.classificacao == 10) {
+    nomeClassificacao = "CORRESPONDECIAS DIVERSAS";
+}
+if (model.colab == 1) {
+    model.descricao =
+        "Indicação. \n" + 
+        "Conforme COLAB nº " + 
+        model.numeroColab + "\n" + 
+        nomeClassificacao;
+}
+else if (model.colab == 2) {
+    model.descricao =
+        "Indicação. \n" + 
+        "Não consta nº de COLAB. \n" + 
+        nomeClassificacao;
+}
+
+
+// TESTE - funcionando
+
+if (model.colab == 1) {
+    model.descricao =
+        "Indicação. \n" + 
+        "Conforme COLAB nº " + 
+        model.numeroColab + "\n" + 
+        model.classificacao;
+}
+
+else if (model.colab == 2) {
+    model.descricao =
+        "Indicação. \n" + 
+        "Não consta nº de COLAB. \n" + 
+        model.classificacao;
+}
+
+
+------------//-------------------
+
+const mensagemPadrao = ` `;
+
+const classificacoes = {
     1:'24º BPM - POLICIAMENTO',
     2:'AUDIÊNCIA PÚBLICA',
     3:'AUTORIZAÇÃO PARA USO DE VEÍCULO OFICIAL',
@@ -194,83 +470,4 @@ model.descricao =
 ${textoColab}
 ${mensagemPadrao}`;
 
-// atualização descrição 
-var nomeClassificacao = "(Descreva aqui sua solicitação de forma resumida)";
-
-if (model.colab == 1) {
-    model.descricao =
-        "Indicação. Conforme COLAB nº " + 
-        model.numeroColab + "\n" + 
-        nomeClassificacao;
-}
-else if (model.colab == 2) {
-    model.descricao =
-        "Indicação. Não consta nº de COLAB. \n" + 
-        nomeClassificacao;
-}
-
-//Atualização teste
-
-var nomeClassificacao = model.classificacao;
-
-if (model.classificacao == 1) {
-    nomeClassificacao = "24º BPM - POLICIAMENTO";
-}
-else if (model.classificacao == 2) {
-    nomeClassificacao = "ABAIXO ASSINADO";
-}
-else if (model.classificacao == 3) {
-    nomeClassificacao = "AUDIÊNCIA PÚBLICA";
-}
-else if (model.classificacao == 4) {
-    nomeClassificacao = "AUTORIZAÇÃO PARA USO DE VEÍCULO OFICIAL";
-}
-else if (model.classificacao == 5) {
-    nomeClassificacao = "CETESB - POLUIÇÃO [PEDIR FISCALIZAÇÃO ]";
-}
-else if (model.classificacao == 6) {
-    nomeClassificacao = "CMD - CÂMARA MUNICIPAL (PRESIDÊNCIA OU MESA)";
-}
-else if (model.classificacao == 7) {
-    nomeClassificacao = "CMD - PEDIDO DE INFORMAÇÕES AO PRESIDENTE DA CÂMARA";
-}
-else if (model.classificacao == 8) {
-    nomeClassificacao = "COMGÁS - MANUTENÇÃO";
-}
-else if (model.classificacao == 9) {
-    nomeClassificacao = "COMUNICAÇÃO";
-}
-else if (model.classificacao == 10) {
-    nomeClassificacao = "CORRESPONDECIAS DIVERSAS";
-}
-if (model.colab == 1) {
-    model.descricao =
-        "Indicação. \n" + 
-        "Conforme COLAB nº " + 
-        model.numeroColab + "\n" + 
-        nomeClassificacao;
-}
-else if (model.colab == 2) {
-    model.descricao =
-        "Indicação. \n" + 
-        "Não consta nº de COLAB. \n" + 
-        nomeClassificacao;
-}
-
-
-// TESTE - funcionando
-
-if (model.colab == 1) {
-    model.descricao =
-        "Indicação. \n" + 
-        "Conforme COLAB nº " + 
-        model.numeroColab + "\n" + 
-        model.classificacao;
-}
-
-else if (model.colab == 2) {
-    model.descricao =
-        "Indicação. \n" + 
-        "Não consta nº de COLAB. \n" + 
-        model.classificacao;
-}
+model.concatena  = model.descricao
