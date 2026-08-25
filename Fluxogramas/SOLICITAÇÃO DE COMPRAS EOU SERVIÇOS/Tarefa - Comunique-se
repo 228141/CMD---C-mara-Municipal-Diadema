@@ -1,0 +1,56 @@
+1. FORMULÁRIO ESPECIALISTA: SOLICITAÇÃO DE COMPRAS E OU SERVIÇOS
+
+RETIRAR: 
+Elemento Vazio - Após LGPD (RESOLVIDO)
+----------------------
+
+2. TAREFA: AVALIAR ROTINA DE COMPRA
+
+CORRIGIR:
+- Nome do formuilário da tarefa H1 (Resolvido)
+
+---------------------------
+3. TAREFA: AUTORIZAR SGL
+
+Corrigi: Nome da tarefa no fluxo e na aba anexo (Resolvido)
+
+--------------------------
+
+4. Tarefa de COMUNIQUE-SE:
+
+ERRO:  
+- ator associado a ela não retornou nenhum candidato (Usuário Solicitante)
+- Erro ao finalizar a tarefa no BPM.
+
+MOTIVO: 
+O processo de comunicação falhou devido à falta de resposta do ator associado à tarefa. Isso pode ocorrer por diversos motivos, como 
+indisponibilidade do ator, problemas técnicos ou falhas na transmissão da mensagem.
+
+SOLUÇÃO PALEATIVA PARA TESTE:
+Incluir ator ADM para continuação dos testes de processo.
+
+Para resolver isso, siga os seguintes passos:
+V
+C
+
+Incluir: adicione os motivos da reprovação da SGL
+
+-------------------
+
+3. TAREFA: Juntar Documentação
+
+Corrigir:
+Para que os botões de anexos não apareçam na documentação do processo. (Resolvido)
+------------------------
+
+4. TAREFA: Assinar Autorização
+Corrigir:
+Nome da tarefa nos anexos (Resolvido)
+
+RETIRAR: 
+Elemento Vazio - Antes Nº do processo (Resolvido)
+
+----------------
+
+5. TAREFA: EMITIR PEDIDO DE COMPRAS
+
